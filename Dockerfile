@@ -1,13 +1,13 @@
-# Usar una imagen base de OpenJDK 17
-FROM openjdk:17-jdk-slim
+# Usa una imagen base de Eclipse Temurin (OpenJDK oficial actual)
+FROM eclipse-temurin:17-jre-alpine
 
-# Establecer el directorio de trabajo dentro del contenedor
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar el archivo JAR generado por Maven
+# Copia el archivo JAR generado por Maven
 COPY target/*.jar app.jar
 
-# Exponer el puerto que usa tu aplicación (Spring Boot usa 8080 por defecto)
+# Expone el puerto que usa tu aplicación (por defecto 8080)
 EXPOSE 8080
 
 # Comando para ejecutar la aplicación
